@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline Diagnosis | MarketCrest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fixed Header Bar -->
+    <header class="top-bar">
+        <div class="brand-wrapper">
+            <img src="colored-logo.png" alt="MarketCrest Logo" class="brand-logo">
+        </div>
+        <div class="progress-container" id="progress-container">
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progress-fill"></div>
+            </div>
+            <span class="progress-text" id="progress-text">1 of 5</span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-wrapper">
+
+        <!-- INTRO SLIDE -->
+        <div class="slide-card active" id="slide-0">
+            <span class="step-eyebrow">MarketCrest | Law Firm Growth Agency</span>
+            <h1 class="question-title">Is your pipeline starved, or is it leaking?</h1>
+            <p class="question-subtitle">Diagnose whether your firm needs more opportunities, needs to capture more of the opportunities it already has, or both.</p>
+            
+            <div style="margin-top: 2rem;">
+                <button class="btn-primary" onclick="nextSlide()" style="font-size: 1.1rem; padding: 1rem 2.2rem;">
+                    Find Out Today <span style="font-size: 1.2rem;">→</span>
+                </button>
+            </div>
+            
+            <div style="margin-top: 1.5rem;" class="keyboard-hint">
+                <span>Press</span> <span class="key-cap">Enter ↵</span> <span>to start</span>
+            </div>
+        </div>
+
+        <!-- QUESTION 1 -->
+        <div class="slide-card" id="slide-1">
+            <span class="step-eyebrow">Question 1 of 5</span>
+            <h2 class="question-title">How fast does your team call back a new lead?</h2>
+
+            <div class="options-grid" style="margin-top: 1.5rem;">
+                <div class="option-btn" data-q="0" data-val="20" onclick="selectOption(0, 20, this)">
+                    <div class="option-left">
+                        <span class="key-badge">A</span>
+                        <span class="option-label">Usually under 5 minutes on an average day</span>
+                    </div>
+                </div>
+                <div class="option-btn" data-q="0" data-val="10" onclick="selectOption(0, 10, this)">
+                    <div class="option-left">
+                        <span class="key-badge">B</span>
+                        <span class="option-label">Mostly between 5 to 30 minutes</span>
+                    </div>
+                </div>
+                <div class="option-btn" data-q="0" data-val="0" onclick="selectOption(0, 0, this)">
+                    <div class="option-left">
+                        <span class="key-badge">C</span>
+                        <span class="option-label">Often over 1 hour or next business day</span>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="nav-footer">
+                <button class="btn-secondary" onclick="prevSlide()">← Back</button>
+                <button class="btn-primary btn-next-q" id="next-btn-0" onclick="nextSlide()" disabled>Next →</button>
+            </footer>
+        </div>
+
+        <!-- QUESTION 2 -->
+        <div class="slide-card" id="slide-2">
+            <span class="step-eyebrow">Question 2 of 5</span>
+            <h2 class="question-title">What happens when a potential client calls your office at 7 PM on a Friday?</h2>
+
+            <div class="options-grid" style="margin-top: 1.5rem;">
+                <div class="option-btn" data-q="1" data-val="20" onclick="selectOption(1, 20, this)">
+                    <div class="option-left">
+                        <span class="key-badge">A</span>
+                        <span class="option-label">A trained live team handles the call directly</span>
+                    </div>
+                </div>
+                <div class="option-btn" data-q="1" data-val="10" onclick="selectOption(1, 10, this)">
+                    <div class="option-left">
+                        <span class="key-badge">B</span>
+                        <span class="option-label">Answering service takes a message or it goes to voicemail</span>
+                    </div>
+                </div>
+                <div class="option-btn" data-q="1" data-val="0" onclick="selectOption(1, 0, this)">
+                    <div class="option-left">
+                        <span class="key-badge">C</span>
+                        <span class="option-label">Mostly rings unanswered or forwards to someone's cell</span>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="nav-footer">
+                <button class="btn-secondary" onclick="prevSlide()">← Back</button>
+                <button class="btn-primary btn-next-q" id="next-btn-1" onclick="nextSlide()" disabled>Next →</button>
+            </footer>
+        </div>
+
+        <!-- QUESTION 3 -->
+        <div class="slide-card" id="slide-3">
+            <span class="step-eyebrow">Question 3 of 5</span>
+            <h2 class="question-title">How many times does your staff attempt to reach an uncontacted lead before stopping?</h2>
+
+            <div class="options-grid" style="margin-top: 1.5rem;">
+                <div class="option-btn" data-q="2" data-val="20" onclick="selectOption(2, 20, this)">
+                    <div class="option-left">
+                        <span class="key-badge">A</span>
+                        <span class="option-label">Consistent multi-touch cadence across calls, texts, and emails over 1 to 2 weeks</span>
+                    </div>
+                </div>
+                <div class="option-btn" data-q="2" data-val="10" onclick="selectOption(2, 10, this)">
+                    <div class="option-left">
+                        <span class="key-badge">B</span>
+                        <span class="option-label">Usually 2 to 4 touchpoints before moving on</span>
+                    </div>
+                </div>
+                <div class="option-btn" data-q="2" data-val="0" onclick="selectOption(2, 0, this)">
+                    <div class="option-left">
+                        <span class="key-badge">C</span>
+                        <span class="option-label">Typically 1 call or attempt only</span>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="nav-footer">
+                <button class="btn-secondary" onclick="prevSlide()">← Back</button>
+                <button class="btn-primary btn-next-q" id="next-btn-2" onclick="nextSlide()" disabled>Next →</button>
+            </footer>
+        </div>
+
+        <!-- QUESTION 4 -->
+        <div class="slide-card" id="slide-4">
+            <span class="step-eyebrow">Question 4 of 5</span>
+            <h2 class="question-title">Does your intake team use a written playbook and practice objection handling?</h2>
+
+            <div class="options-grid" style="margin-top: 1.5rem;">
+                <div class="option-btn" data-q="3" data-val="20" onclick="selectOption(3, 20, this)">
+                    <div class="option-left">
+                        <span class="key-badge">A</span>
+                        <span class="option-label">Yes, structured scripts for key moments and trained talk tracks</span>
+                    </div>
+                </div>
+                <div class="option-btn" data-q="3" data-val="10" onclick="selectOption(3, 10, this)">
+                    <div class="option-left">
+                        <span class="key-badge">B</span>
+                        <span class="option-label">Mostly a general checklist or outline with occasional practice</span>
+                    </div>
+                </div>
+                <div class="option-btn" data-q="3" data-val="0" onclick="selectOption(3, 0, this)">
+                    <div class="option-left">
+                        <span class="key-badge">C</span>
+                        <span class="option-label">No formal playbook, staff mostly handle calls their own way</span>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="nav-footer">
+                <button class="btn-secondary" onclick="prevSlide()">← Back</button>
+                <button class="btn-primary btn-next-q" id="next-btn-3" onclick="nextSlide()" disabled>Next →</button>
+            </footer>
+        </div>
+
+        <!-- QUESTION 5 -->
+        <div class="slide-card" id="slide-5">
+            <span class="step-eyebrow">Question 5 of 5</span>
+            <h2 class="question-title">How often does a manager listen to recorded intake calls and coach staff?</h2>
+
+            <div class="options-grid" style="margin-top: 1.5rem;">
+                <div class="option-btn" data-q="4" data-val="20" onclick="selectOption(4, 20, this)">
+                    <div class="option-left">
+                        <span class="key-badge">A</span>
+                        <span class="option-label">Regular weekly call reviews and coaching sessions</span>
+                    </div>
+                </div>
+                <div class="option-btn" data-q="4" data-val="10" onclick="selectOption(4, 10, this)">
+                    <div class="option-left">
+                        <span class="key-badge">B</span>
+                        <span class="option-label">Occasional spot checks or monthly reviews</span>
+                    </div>
+                </div>
+                <div class="option-btn" data-q="4" data-val="0" onclick="selectOption(4, 0, this)">
+                    <div class="option-left">
+                        <span class="key-badge">C</span>
+                        <span class="option-label">Rarely or never, calls are not routinely audited</span>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="nav-footer">
+                <button class="btn-secondary" onclick="prevSlide()">← Back</button>
+                <button class="btn-primary btn-next-q" id="next-btn-4" onclick="nextSlide()" disabled>Next →</button>
+            </footer>
+        </div>
+
+        <!-- BASELINE METRICS SLIDE -->
+        <div class="slide-card" id="slide-6">
+            <span class="step-eyebrow">Final Step</span>
+            <h2 class="question-title">Add three firm numbers to complete your diagnosis</h2>
+            <p class="question-subtitle">These numbers calculate your actual inquiry-to-hire rate and the value of signing one more client every month.</p>
+
+            <div class="form-grid">
+                <div class="input-group">
+                    <label class="input-label" for="monthly-calls">Monthly Inquiries</label>
+                    <input type="number" id="monthly-calls" class="input-field" min="1" step="1" value="50" placeholder="e.g. 50" required>
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="monthly-hires">Signed Clients Per Month</label>
+                    <input type="number" id="monthly-hires" class="input-field" min="0" step="1" value="5" placeholder="e.g. 5" required>
+                </div>
+                <div class="input-group form-grid-full">
+                    <label class="input-label" for="case-value">Average Signed Retainer Fee ($)</label>
+                    <input type="number" id="case-value" class="input-field" min="1" step="100" value="5000" placeholder="e.g. 5000" required>
+                </div>
+            </div>
+
+            <div style="margin-top: 1rem;">
+                <button class="btn-primary" onclick="calculateAndShowResults()" style="font-size: 1.1rem; width: 100%; justify-content: center; padding: 1rem;">
+                    Diagnose My Pipeline →
+                </button>
+            </div>
+
+            <footer class="nav-footer" style="margin-top: 2rem;">
+                <button class="btn-secondary" onclick="prevSlide()">← Back</button>
+                <div class="keyboard-hint">Press <span class="key-cap">Enter ↵</span> to calculate</div>
+            </footer>
+        </div>
+
+        <!-- RESULTS SLIDE -->
+        <div class="slide-card" id="slide-7">
+            <div class="results-card fade-in">
+                <div class="results-header">
+                    <span class="results-tag">MarketCrest Law Firm Growth Agency</span>
+                    <h2 class="results-title" id="diagnosis-title">Your Pipeline Is Leaking</h2>
+                    <p class="diagnosis-summary" id="diagnosis-summary"></p>
+                </div>
+
+                <!-- Hero Score Grid -->
+                <div class="hero-score-grid">
+                    <div class="score-box">
+                        <div class="grade-circle" id="grade-badge">D</div>
+                        <div class="health-score-val" id="score-val">48% Intake Health</div>
+                        <div class="health-score-label" id="grade-label">Severe Intake Leakage</div>
+                    </div>
+
+                    <div class="leakage-box">
+                        <span class="leakage-eyebrow">Your Current Numbers</span>
+                        <div class="leakage-amount" id="hire-rate-val">10% Hire Rate</div>
+                        <div class="leakage-annual" id="current-revenue-val">Current Monthly Retained Revenue: $25,000</div>
+                        <p class="leakage-desc" id="additional-hire-desc">Signing one more client every month adds $5,000 in monthly retained revenue, or $60,000 across 12 extra clients per year.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-breakdown">
+                    <div class="section-title">Pipeline Breakdown</div>
+                    <strong id="volume-status">Focused Lead Flow</strong>
+                    <p id="benchmark-summary"></p>
+                </div>
+
+                <!-- Red Flags -->
+                <div class="section-title">
+                    Top Priorities
+                </div>
+                <div class="red-flags-list" id="red-flags-container">
+                    <!-- Dynamic Red Flags Populated by JS -->
+                </div>
+
+                <!-- Email Lead Capture Box -->
+                <div class="email-capture-box">
+                    <div class="email-capture-header">
+                        <h3 class="email-capture-title">Get Your Report</h3>
+                        <p class="email-capture-desc">Enter your email to download your full results as a PDF.</p>
+                    </div>
+                    <form class="email-form" onsubmit="handleEmailSubmit(event)">
+                        <input type="email" id="user-email" class="input-field email-input" placeholder="managingpartner@lawfirm.com" required>
+                        <button type="submit" class="btn-primary send-btn" id="send-report-btn">Get My Report →</button>
+                    </form>
+                    <div class="email-success-msg" id="email-success-msg" style="display: none;">
+                        Report downloaded. Your email was saved on this device.
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: center;">
+                    <button class="btn-secondary" onclick="restartAudit()">Retake Audit</button>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+    <details class="booth-tools">
+        <summary>Spreadsheet backup</summary>
+        <button type="button" class="btn-secondary" onclick="BoothStorage.connect()">Choose save file</button>
+        <button type="button" class="btn-secondary" onclick="BoothStorage.download()">Download backup</button>
+        <p id="booth-status" role="status">The first submission asks where to save intake-booth.csv. Choose Downloads. Later submissions update the same file while this tab stays open.</p>
+    </details>
+
+    <script src="booth-storage.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
